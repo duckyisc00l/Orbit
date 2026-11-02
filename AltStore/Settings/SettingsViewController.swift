@@ -517,7 +517,7 @@ private extension SettingsViewController
             }
             else
             {
-                settingsHeaderFooterView.secondaryLabel.text = NSLocalizedString("Support the SideStore Team by following our socials or becoming a patron!", comment: "")
+                settingsHeaderFooterView.secondaryLabel.text = NSLocalizedString("Support the Orbit Team by following our socials or becoming a patron!", comment: "")
             }
 
         case .account:
@@ -1243,9 +1243,9 @@ extension SettingsViewController
 
                         // TODO: MARKETING_VERSION is going to be set anyways so this needs to be fixed for beta
                         if let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
-                            mailViewController.setSubject("SideStore Beta \(version) Feedback")
+                            mailViewController.setSubject("Orbit Beta \(version) Feedback")
                         } else {
-                            mailViewController.setSubject("SideStore Beta Feedback")
+                            mailViewController.setSubject("Orbit Beta Feedback")
                         }
 
                        self.present(mailViewController, animated: true, completion: nil)
@@ -1297,7 +1297,7 @@ extension SettingsViewController
                     selected: UserDefaults.standard.menuAnisetteURL,
                     onResetAdiPb: { [weak self] in
                         guard let self = self else { return }
-                        ToastView(text: "Cleared adi.pb!", detailText: "You will need to log back into Apple ID in SideStore.")
+                        ToastView(text: "Cleared adi.pb!", detailText: "You will need to log back into Apple ID in Orbit.")
                             .show(in: self)
                     }
                 )

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "default": [
+    {
+      "identifier": "raw.githubusercontent.com/duckyisc00l/flappy-bird-ios/ipa/source.json",
+      "sourceURL": "https://raw.githubusercontent.com/duckyisc00l/flappy-bird-ios/ipa/source.json"
+    }
+  ],
+  "blocked": []
+}

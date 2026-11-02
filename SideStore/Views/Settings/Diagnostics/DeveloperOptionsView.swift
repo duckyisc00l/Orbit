@@ -649,7 +649,7 @@ struct DeveloperOptionsView: View {
             }
             SwiftUI.Button("Cancel", role: .cancel) {}
         } message: {
-            Text("Deleting the database will remove all app entries and sources from SideStore.")
+            Text("Deleting the database will remove all app entries and sources from Orbit.")
         }
         .alert("Clear Refresh Attempts", isPresented: $showClearRefreshAttemptsConfirmation) {
             SwiftUI.Button("Clear", role: .destructive) {

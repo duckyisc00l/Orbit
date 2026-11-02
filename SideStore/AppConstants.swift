@@ -37,10 +37,10 @@ public enum AppConstants {
     
     public enum Sources {
         public static let fetchTimeout: TimeInterval  = 3.0
-        public static let defaultSourcesURL           = URL(string: "https://sidestore.io/default-sources")!
-        public static let sideStoreCommunitySourceURL = URL(string: "https://sidestore.io/apps-v2.json/")!
-        public static let sideStoreFallbackIconURL    = URL(string: "https://sidestore.io/apps-v2.json/apps/sidestore/icon.png")!
-        public static let sideStoreWebsite            = URL(string: "https://sidestore.io")!
+        public static let defaultSourcesURL           = URL(string: "https://raw.githubusercontent.com/duckyisc00l/Orbit/orbit/known-sources.json")!
+        public static let sideStoreCommunitySourceURL = URL(string: "https://raw.githubusercontent.com/duckyisc00l/flappy-bird-ios/ipa/source.json")!
+        public static let sideStoreFallbackIconURL    = URL(string: "https://raw.githubusercontent.com/duckyisc00l/Orbit/orbit/AltStore/Resources/Icons.xcassets/Classic/App.imageset/App.png")!
+        public static let sideStoreWebsite            = URL(string: "https://github.com/duckyisc00l/Orbit")!
     }
     
     public enum Bonjour {
@@ -136,12 +136,12 @@ public enum AppConstants {
         public static let appleAccount              = URL(string: "https://account.apple.com")!
 
         // SideStore Documentation & Community URLs
-        public static let pairingDocumentation      = URL(string: "https://docs.sidestore.io/docs/advanced/pairing-file")!
-        public static let errorCodesDocumentation   = URL(string: "https://docs.sidestore.io/docs/troubleshooting/error-codes")!
-        public static let sideStoreWebsite          = URL(string: "https://sidestore.io")!
-        public static let sideStoreGitHub           = URL(string: "https://github.com/SideStore")!
-        public static let sideStoreIssues           = URL(string: "https://github.com/SideStore/SideStore/issues")!
-        public static let sideStoreDiscord          = URL(string: "https://discord.gg/sidestore-949183273383395328")!
+        public static let pairingDocumentation      = URL(string: "https://github.com/duckyisc00l/Orbit/blob/orbit/docs/help.md#pairing-file")!
+        public static let errorCodesDocumentation   = URL(string: "https://github.com/duckyisc00l/Orbit/blob/orbit/docs/help.md#errors")!
+        public static let sideStoreWebsite          = URL(string: "https://github.com/duckyisc00l/Orbit")!
+        public static let sideStoreGitHub           = URL(string: "https://github.com/duckyisc00l/Orbit")!
+        public static let sideStoreIssues           = URL(string: "https://github.com/duckyisc00l/Orbit/issues")!
+        public static let sideStoreDiscord          = URL(string: "https://github.com/duckyisc00l/Orbit")!
     }
 
     public enum Minimuxer {
