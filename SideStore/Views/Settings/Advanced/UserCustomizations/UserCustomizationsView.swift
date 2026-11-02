@@ -51,6 +51,7 @@ struct UserCustomizationsView: View {
     @State private var isFileSizeVerificationEnabled: Bool = UserDefaults.standard.isFileSizeVerificationEnabled
     @State private var permissionCheckingDisabled: Bool = UserDefaults.standard.permissionCheckingDisabled
     @State private var isCellularRefreshEnabled: Bool = UserDefaults.standard.isCellularRefreshEnabled
+    @State private var showCellularShortcutSetup: Bool = false
     @State private var turnOnDataShortcutName: String = UserDefaults.standard.turnOnDataShortcutName
     @State private var turnOffDataShortcutName: String = UserDefaults.standard.turnOffDataShortcutName
     @State private var turnOnBaseDelayText: String = {
@@ -444,6 +445,16 @@ struct UserCustomizationsView: View {
         #if !os(tvOS)
         .navigationBarTitleDisplayMode(.large)
         #endif
+        .sheet(isPresented: $showCellularShortcutSetup) {
+            CellularShortcutSetupView(
+                turnOffName: turnOffDataShortcutName,
+                turnOnName: turnOnDataShortcutName,
+                onConfirm: {
+                    isCellularRefreshEnabled = true
+                    CellularRefreshManager.shared.setEnabled(true)
+                }
+            )
+        }
         .alert("Restart Required", isPresented: $showAnisetteRestartConfirmation) {
             SwiftUI.Button("Restart Now", role: .destructive) {
                 Task {
@@ -609,11 +620,32 @@ struct UserCustomizationsView: View {
                     isOn: Binding(
                         get: { isCellularRefreshEnabled },
                         set: { newValue in
+                            // The shortcuts are required, so setup comes before turning this on.
+                            if newValue && !CellularShortcutSetupView.isConfirmed {
+                                showCellularShortcutSetup = true
+                                return
+                            }
                             isCellularRefreshEnabled = newValue
                             CellularRefreshManager.shared.setEnabled(newValue)
                         }
                     )
                 )
+
+                divider
+
+                SwiftUI.Button(action: { showCellularShortcutSetup = true }) {
+                    HStack {
+                        Text("Set Up Shortcuts")
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundColor(.white)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(Color.white.opacity(0.4))
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                }
 
                 divider
 
