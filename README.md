@@ -1,3 +1,9 @@
+# Orbit
+
+Orbit is a personal fork of [SideStore](https://github.com/SideStore/SideStore), licensed under the AGPL-3.0. It is not affiliated with the SideStore project. The original README follows.
+
+---
+
 # SideStore
 
 > SideStore is an *untethered, community driven* alternative app store for non-jailbroken iOS devices 
