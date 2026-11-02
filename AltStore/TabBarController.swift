@@ -43,7 +43,20 @@ final class TabBarController: UITabBarController
         debugLog("[TabBarController] viewDidLoad()")
         
         let browseNavigationController = self.viewControllers![Tab.browse.rawValue] as! UINavigationController
-        browseNavigationController.tabBarItem.image = UIImage(systemName: "bag")
+        browseNavigationController.tabBarItem.image = UIImage(systemName: "safari")
+        browseNavigationController.tabBarItem.selectedImage = UIImage(systemName: "safari.fill")
+
+        let tabIcons: [(tab: Tab, normal: String, selected: String)] = [
+            (.news, "newspaper", "newspaper.fill"),
+            (.sources, "square.stack.3d.up", "square.stack.3d.up.fill"),
+            (.myApps, "square.grid.2x2", "square.grid.2x2.fill"),
+            (.settings, "gearshape", "gearshape.fill")
+        ]
+        for icon in tabIcons {
+            let item = self.viewControllers![icon.tab.rawValue].tabBarItem
+            item?.image = UIImage(systemName: icon.normal)
+            item?.selectedImage = UIImage(systemName: icon.selected)
+        }
         
         let sourcesNavigationController = self.viewControllers![Tab.sources.rawValue] as! UINavigationController
         self.sourcesViewController = sourcesNavigationController.viewControllers.first as? SourcesViewController

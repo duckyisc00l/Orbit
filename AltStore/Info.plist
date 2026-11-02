@@ -42,6 +42,8 @@
 	<string>6.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>Orbit</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>

@@ -9,8 +9,8 @@
 import SwiftUI
 
 private extension Color {
-    static let settingsRowBackground = Color.white.opacity(0.15)
-    static let settingsDivider = Color.white.opacity(0.15)
+    static let settingsRowBackground = Color.white.opacity(0.08)
+    static let settingsDivider = Color.white.opacity(0.1)
 }
 
 struct ExperimentalFeaturesView: View {
