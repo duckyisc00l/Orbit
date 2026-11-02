@@ -57,9 +57,9 @@ public enum OperationError: LocalizedError, CustomNSError, Sendable, Equatable {
         case .timedOut:
             return "The operation timed out."
         case .unableToConnectSideJIT:
-            return "Unable to connect to SideJITServer. Please check that you are on the same Wi-Fi of and your Firewall has been set correctly on your server."
+            return "Unable to connect to OrbitJITServer. Please check that you are on the same Wi-Fi of and your Firewall has been set correctly on your server."
         case .unableToRespondSideJITDevice:
-            return "SideJITServer is unable to connect to your iDevice. Please make sure you have paired your iDevice by running 'SideJITServer -y', or try refreshing SideJITServer from Settings."
+            return "OrbitJITServer is unable to connect to your iDevice. Please make sure your iDevice is paired with the server on your computer, or try refreshing OrbitJITServer from Settings."
         case .unknownResult:
             return "The operation returned an unknown result."
 
@@ -112,7 +112,7 @@ public enum OperationError: LocalizedError, CustomNSError, Sendable, Equatable {
         case .pledgeInactive(let appName):
             return "Your pledge is no longer active. Please renew it to continue using \(appName) normally."
         case .SideJITIssue(let error):
-            return "An error occurred while using SideJIT: \(error)"
+            return "An error occurred while using OrbitJITServer: \(error)"
         case .unknownUDID(let reason):
             return "Orbit could not determine this device's UDID: \(reason)\n\nPlease replace your pairing using iloader or idevice_pair."
         }

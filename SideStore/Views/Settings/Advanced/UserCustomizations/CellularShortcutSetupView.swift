@@ -26,7 +26,7 @@ struct CellularShortcutSetupView: View {
         NavigationView {
             List {
                 Section {
-                    Text("Refreshing without Wi-Fi briefly turns cellular data off, then back on. Create these two shortcuts first. The names must match exactly.")
+                    Text("Installing or refreshing apps without Wi-Fi briefly turns cellular data off, then back on. Create these two shortcuts first. The names must match exactly.")
                 }
 
                 shortcutSection(name: turnOffName, action: "Turn Cellular Data Off")
@@ -40,7 +40,7 @@ struct CellularShortcutSetupView: View {
                     }
                     .font(.headline)
                 } footer: {
-                    Text("Orbit can't check this for you. If a refresh fails, make sure both shortcuts exist and their names match.")
+                    Text("Orbit can't check this for you. If an install or refresh fails, make sure both shortcuts exist and their names match.")
                 }
             }
             .navigationTitle("Set Up Shortcuts")

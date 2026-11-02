@@ -97,7 +97,7 @@ struct SideJITServerConfigView: View {
         #else
         .listStyle(.grouped)
         #endif
-        .navigationTitle("SideJITServer")
+        .navigationTitle("OrbitJITServer")
         .overlay(
             Group {
                 if showCopiedToast {
@@ -124,7 +124,7 @@ struct SideJITServerConfigView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                     
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Enable SideJITServer")
+                        Text("Enable OrbitJITServer")
                             .font(.body.weight(.semibold))
                         Text("Required for JIT on iOS 17+")
                             .font(.caption)
@@ -195,7 +195,7 @@ struct SideJITServerConfigView: View {
     private var configurationSection: some View {
         Section(
             header: Text("Server Address"),
-            footer: Text("Leave empty to automatically discover SideJITServer on your local network via Bonjour.")
+            footer: Text("Leave empty to automatically discover OrbitJITServer on your local network via Bonjour.")
         ) {
             HStack {
                 TextField(AppConstants.SideJIT.defaultServerURL, text: $customAddress)
@@ -348,11 +348,11 @@ struct SideJITServerConfigView: View {
     private var aboutSection: some View {
         Section(header: Text("About")) {
             VStack(alignment: .leading, spacing: 6) {
-                Text("SideJITServer attaches Apple's debugserver service on macOS to running apps on iOS 17+ over local Wi-Fi or USB.")
+                Text("OrbitJITServer attaches Apple's debugserver service on macOS to running apps on iOS 17+ over local Wi-Fi or USB.")
                     .font(.caption)
                     .foregroundColor(.secondary)
                 
-                Text("When Orbit triggers JIT, SideJITServer sends the debug attach signal and enables Just-In-Time execution instantly.")
+                Text("When Orbit triggers JIT, OrbitJITServer sends the debug attach signal and enables Just-In-Time execution instantly.")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }

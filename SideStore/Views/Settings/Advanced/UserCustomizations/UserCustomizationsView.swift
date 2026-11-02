@@ -615,8 +615,8 @@ struct UserCustomizationsView: View {
 
             VStack(spacing: 0) {
                 toggleRow(
-                    title: "Cellular Refresh",
-                    subtitle: "Automatically toggle cellular data via Shortcuts during refresh",
+                    title: "Cellular Installs & Refresh",
+                    subtitle: "Install and refresh apps without Wi-Fi by toggling cellular data via Shortcuts",
                     isOn: Binding(
                         get: { isCellularRefreshEnabled },
                         set: { newValue in
